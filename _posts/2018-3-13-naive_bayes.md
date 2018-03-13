@@ -1,7 +1,6 @@
 ---
 layout: post
-title: Naive Bayes Sınıflandırma Algoritması(Teorik
-visible: 0
+title: Naive Bayes Sınıflandırma Algoritması(Teorik)
 ---
 
 <p>Naive-Bayes, basit ve aynı zamanda etkili bir <strong>sınıflandırma</strong> algoritmasıdır. Bayes teoremine dayanmaktadır. Algoritmadaki ‘Naive’ kısmı veri kümesindeki özniteliklerin(features) birbirinden bağımsız olduğu varsayımından gelir. Yani veri kümesinde bir özniteliğin varlığı diğer özniteliklerden herhangi birine bağlı değildir.Gerçek hayatta ise bu varsayım pek doğru olmaz. ‘Bayes’ kısmı ise İngiliz matematikçi Thomas Bayes’ten gelmektedir.
