@@ -7,7 +7,7 @@ title: Naive Bayes Sınıflandırma Algoritması(Teorik)
 </p>
 Naive-Bayes sınıflandırma algoritması bir mesajın spam olup olmadığının kontrolü, bir makalenin içeriğinin hangi konuda(teknoloji, spor, politik) olduğunun sınıflandırılması veya yüz tanıma gibi alanlarda kullanılır. Bu algoritmanın nasıl çalıştığını anlayabilmek için önce Bayes teoremine bakalım.Bayes teoremi, koşulsal olasılık(conditional probability) üzerine kurulu bir teoremdir.
 
-
+![Image](/assets/naive_bayes_images/kume_gosterim.png)
 
 
 
