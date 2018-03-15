@@ -2,17 +2,17 @@
 layout: post
 comments: true
 title: Naive Bayes Sınıflandırma Algoritması(Teorik)
-excerpt: "Naive Bayes algoritmasını teorik olarak inceleyeceğiz."
+excerpt: "Naive Bayes algoritmasını teorik olarak inceleyip, örnek üzerinde göstereceğiz."
 date: 2018-03-13  19:00:00
 published: true
 ---
 
-<p>Naive-Bayes, basit ve aynı zamanda etkili bir <strong>sınıflandırma</strong> algoritmasıdır. Bayes teoremine dayanmaktadır. Algoritmadaki ‘Naive’ kısmı veri kümesindeki özniteliklerin(features) birbirinden bağımsız olduğu varsayımından gelir. Yani veri kümesinde bir özniteliğin varlığı diğer özniteliklerden herhangi birine bağlı değildir.Gerçek hayatta ise bu varsayım pek doğru olmaz. ‘Bayes’ kısmı ise İngiliz matematikçi Thomas Bayes’ten gelmektedir.
-</p>
+Naive-Bayes, basit ve aynı zamanda etkili bir **sınıflandırma** algoritmasıdır. Bayes teoremine dayanmaktadır. Algoritmadaki ‘Naive’ kısmı veri kümesindeki özniteliklerin(features) birbirinden bağımsız olduğu varsayımından gelir. Yani veri kümesinde bir özniteliğin varlığı diğer özniteliklerden herhangi birine bağlı değildir.Gerçek hayatta ise bu varsayım pek doğru olmaz. Bayes kısmı ise İngiliz matematikçi *Thomas Bayes’ten* gelmektedir.
+
 Naive-Bayes sınıflandırma algoritması bir mesajın spam olup olmadığının kontrolü, bir makalenin içeriğinin hangi konuda(teknoloji, spor, politik) olduğunun sınıflandırılması veya yüz tanıma gibi alanlarda kullanılır. Bu algoritmanın nasıl çalıştığını anlayabilmek için önce Bayes teoremine bakalım.Bayes teoremi, koşulsal olasılık(conditional probability) üzerine kurulu bir teoremdir.
 
-<img src="https://github.com/snnclsr/snnclsr.github.io/blob/master/_assets/naive_bayes_images/kume_gosterim.png" align=left>
 
+<img src=/_assets/naive_bayes_images/kume_gosterim.png align=left>
 
 <p>
 P(A|B) : B nin olasılığı verildiğinde A olayının olma olasılığı
