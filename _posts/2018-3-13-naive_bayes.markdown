@@ -1,12 +1,11 @@
 ---
 layout: post
 comments: true
-title:  "Naive Bayes"
-excerpt: "Naive Bayes"
-date:   2018-03-11 11:00:00
-mathjax: true
+title:  "The Unreasonable Effectiveness of Recurrent Neural Networks"
+excerpt: "We'll train and sample from character-level RNN language models that learn to write poetry, latex math and code. We'll also analyze the models and get hints of future research directions."
+date:   2015-05-21 11:00:00
 author: Sinan Calisir
-disqus: true
+mathjax: true
 ---
 
 Naive-Bayes, basit ve aynı zamanda etkili bir **sınıflandırma** algoritmasıdır. Bayes teoremine dayanmaktadır. Algoritmadaki ‘Naive’ kısmı veri kümesindeki özniteliklerin(features) birbirinden bağımsız olduğu varsayımından gelir. Yani veri kümesinde bir özniteliğin varlığı diğer özniteliklerden herhangi birine bağlı değildir.Gerçek hayatta ise bu varsayım pek doğru olmaz. Bayes kısmı ise İngiliz matematikçi *Thomas Bayes’ten* gelmektedir.
