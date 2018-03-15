@@ -5,6 +5,7 @@ title:  "Naive Bayes"
 excerpt: "Naive Bayes"
 date:   2018-03-11 11:00:00
 mathjax: true
+author: Sinan Calisir
 disqus: true
 ---
 
