@@ -3,7 +3,7 @@ layout: post
 comments: true
 title:  "Naive Bayes"
 excerpt: "Naive Bayes"
-date:   2018-03-21 11:00:00
+date:   2018-03-11 11:00:00
 mathjax: true
 disqus: true
 ---
@@ -38,8 +38,8 @@ Sonuçlar
 Bu yazıda Naive Bayes sınıflandırma algoritmasına bir giriş yaptık ve temelinde duran Bayes teoremini inceledik.
 
 Faydalı Linkler
-https://tr.wikipedia.org/wiki/Naive_Bayes_s%C4%B1n%C4%B1fland%C4%B1r%C4%B1c%C4%B1
+[Wikipedi](https://tr.wikipedia.org/wiki/Naive_Bayes_s%C4%B1n%C4%B1fland%C4%B1r%C4%B1c%C4%B1)
 
 Bazı İngilizce kavramların Türkçe karşılıklarını sayın Ethem Alpaydın hocamızın kitabında bulunan sözlükten aldım.
-https://www.cmpe.boun.edu.tr/~ethem/i2ml2e_tr/i2tr_sozluk.pdf
+[Sozluk](https://www.cmpe.boun.edu.tr/~ethem/i2ml2e_tr/i2tr_sozluk.pdf)
 
