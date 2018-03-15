@@ -6,7 +6,7 @@ baseurl: ""
 url: "http://snnclsr.github.io"
 twitter_username: snnclsr
 github_username:  snnclsr
-disqus: SinanCalisir
+disqus: snnclsrblog
 
 # Build settings
 markdown: kramdown
