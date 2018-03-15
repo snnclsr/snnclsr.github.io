@@ -16,6 +16,10 @@ Naive-Bayes sınıflandırma algoritması bir mesajın spam olup olmadığının
 <img src="/_assets/naive_bayes_images/naive_bayes_formula.png">
 </div>
 
+<div class="imgcap">
+![Image](/_assets/naive_bayes_images/naive_bayes_formula.png)
+</div>
+
 
 
 P(A|B) : B nin olasılığı verildiğinde A olayının olma olasılığı
