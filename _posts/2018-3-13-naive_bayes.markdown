@@ -1,9 +1,9 @@
 ---
 layout: post
 comments: true
-title:  "The Unreasonable Effectiveness of Recurrent Neural Networks"
-excerpt: "We'll train and sample from character-level RNN language models that learn to write poetry, latex math and code. We'll also analyze the models and get hints of future research directions."
-date:   2015-05-21 11:00:00
+title:  "Naive Bayes"
+excerpt: "Naive Bayes"
+date:   2018-03-11 11:00:00
 author: Sinan Calisir
 mathjax: true
 ---
