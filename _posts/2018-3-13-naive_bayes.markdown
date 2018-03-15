@@ -1,10 +1,9 @@
 ---
 layout: post
 comments: true
-title:  "Naive Bayes"
-excerpt: "Naive Bayes"
+title:  "Naive Bayes Sınıflandırma Algoritması(Part 1-Teori)"
+excerpt: "Naive Bayes sınıflandırma algoritmasını örneklerle inceleyeceğiz ve pratik uygulama için temel oluşturacağız."
 date:   2018-03-11 11:00:00
-author: Sinan Calisir
 mathjax: true
 ---
 
