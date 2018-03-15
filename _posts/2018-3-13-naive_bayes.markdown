@@ -11,6 +11,13 @@ Naive-Bayes, basit ve aynı zamanda etkili bir **sınıflandırma** algoritması
 
 Naive-Bayes sınıflandırma algoritması bir mesajın spam olup olmadığının kontrolü, bir makalenin içeriğinin hangi konuda(teknoloji, spor, politik) olduğunun sınıflandırılması veya yüz tanıma gibi alanlarda kullanılır. Bu algoritmanın nasıl çalıştığını anlayabilmek için önce Bayes teoremine bakalım.Bayes teoremi, koşulsal olasılık(conditional probability) üzerine kurulu bir teoremdir.
 
+
+<div class="imgcap">
+<img src="/_assets/naive_bayes_images/naive_bayes_formula.png">
+</div>
+
+
+
 P(A|B) : B nin olasılığı verildiğinde A olayının olma olasılığı
 P(B|A) : A nın olasılığı verildiğinde B olayının olma olasılığı
 P(A) : A olayının olma olasılığı
