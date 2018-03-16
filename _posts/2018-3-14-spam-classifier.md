@@ -5,7 +5,7 @@ excerpt: "Naive Bayes algoritması kullanarak bir mesajın spam olup olmadığı
 published: true
 comments: true
 ---
-Bu yazıda Naive Bayes sınıflandırma algoritmasını kullanarak atılan bir mesajın(sms) spam olup olmadığını tahmin eden bir model geliştireceğiz. Algoritmanın nasıl çalıştığını anlamak isterseniz [1.Bölümü](http://127.0.0.1:4000/2018/03/11/naive_bayes.html) okumanızı tavsiye ederim.
+Bu yazıda Naive Bayes sınıflandırma algoritmasını kullanarak atılan bir mesajın(sms) spam olup olmadığını tahmin eden bir model geliştireceğiz. Algoritmanın nasıl çalıştığını anlamak isterseniz [1.Bölümü](https://snnclsr.github.io/snnclsr.github.io/2018/03/11/naive_bayes/) okumanızı tavsiye ederim.
 
 Sınıflandırma algoritmasını, python programlama dilinde scikit-learn(sklearn) kütüphanesini kullanarak kodlayacağız.Verileri okumak için de pandas kütüphanesini kullanacağız.Bu yazımda kullanacağım veri kümesine [Kaggle](https://www.kaggle.com/uciml/sms-spam-collection-dataset/data) veya [UCI](https://archive.ics.uci.edu/ml/machine-learning-databases/00228/) adreslerinden ulaşabilirsiniz.Ben birinci linki kullanacağım.
 
