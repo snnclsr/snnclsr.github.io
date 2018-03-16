@@ -11,7 +11,7 @@ Sınıflandırma algoritmasını, python programlama dilinde scikit-learn(sklear
 
 Makine öğrenmesi algoritmaları input olarak sayısal değerler kullandığı ve bu problemde metinsel veri ile uğraşacağımız için verinin sayısal değerlere dönüştürülmesi gerekiyor. Bu dönüşüm için bag of words modelini kullanacağız.
 
-#### Bag of words model
+### Bag of words model
 
 Bu yöntemde elimizdeki her bir mesajı kelime kelime ayırıyoruz(tokenize) ve bu kelimelerin mesajlar içerisinde kaç defa geçtiğini gösteren bir sözlük(dictionary) oluşturuyoruz.Sözlük, mesajların içerisinde bulunan kelimelerden oluşuyor. Bundan sonra da her bir mesaj için encoding işlemini yapıyoruz. Kısaca sözlükteki kelimelerin ilgili mesajın içinde olup olmadığını gösteriyoruz. Eger sözlükteki kelime, mesajın içerisinde var ise ilgili indise sözlükteki sayısal karşılığını yazıyoruz(burada sayısal karşılık, ilgili kelimenin kaç defa geçtiği(count)), eğer kelime mesajın içinde yoksa 0 yazıyoruz.
 
