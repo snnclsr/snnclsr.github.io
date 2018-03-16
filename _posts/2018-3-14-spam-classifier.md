@@ -15,7 +15,9 @@ Makine öğrenmesi algoritmaları input olarak sayısal değerler kullandığı 
 
 Bu yöntemde elimizdeki her bir mesajı kelime kelime ayırıyoruz(tokenize) ve bu kelimelerin mesajlar içerisinde kaç defa geçtiğini gösteren bir sözlük(dictionary) oluşturuyoruz.Sözlük, mesajların içerisinde bulunan kelimelerden oluşuyor. Bundan sonra da her bir mesaj için encoding işlemini yapıyoruz. Kısaca sözlükteki kelimelerin ilgili mesajın içinde olup olmadığını gösteriyoruz. Eger sözlükteki kelime, mesajın içerisinde var ise ilgili indise sözlükteki sayısal karşılığını yazıyoruz(burada sayısal karşılık, ilgili kelimenin kaç defa geçtiği(count)), eğer kelime mesajın içinde yoksa 0 yazıyoruz.
 
-<img src="spam_classifier.png" align="left">
+<div class="imgcap">
+<img src="{{site.url}}/assets/naive_bayes_images/spam_classifier.png">
+</div>
 
 Not: Burada sözlük kavramını kelime haznesi yani bildiğimiz kelimeler anlamında kullandım.
 
