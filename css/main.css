@@ -264,7 +264,7 @@ a:visited { color: #205caa; }
 .imgright { float: right; margin-left: 10px; }
 .imgcap img {
   border: 1px solid #999;
-  max-width: 100%;
+  max-width: 50%;
 }
 .imgcap {
   color: #555;
