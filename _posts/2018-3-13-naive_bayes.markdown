@@ -58,7 +58,7 @@ baktığımızda %8.3 olasılıkla test sonucu pozitif olan bir hasta kanser ola
 
 ### Sonuçlar
 
-Bu yazıda Naive Bayes sınıflandırma algoritmasına bir giriş yaptık ve temelinde duran Bayes teoremini inceledik. Bu yazının ikinci bölümünde ise naive bayes algoritmasını kullanarak bir mesajın spam olup olmadığını tahmin eden bir program geliştireceğiz. Yazıya [bu](http://127.0.0.1:4000/2018/03/14/spam-classifier.html) linkten ulaşabilirsiniz.
+Bu yazıda Naive Bayes sınıflandırma algoritmasına bir giriş yaptık ve temelinde duran Bayes teoremini inceledik. Bu yazının ikinci bölümünde ise naive bayes algoritmasını kullanarak bir mesajın spam olup olmadığını tahmin eden bir program geliştireceğiz. Yazıya [bu](https://snnclsr.github.io/snnclsr.github.io/2018/03/14/spam-classifier/) linkten ulaşabilirsiniz.
 
 Faydalı Linkler
 
