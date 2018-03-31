@@ -1,7 +1,8 @@
 ---
 layout: post
 comments: true
-title: "Machine Learning From Disaster"
+title: "Kaggle: Felaketten Çıkarılan Dersler"
+excerpt: "Kaggle'ın ünlü veri kümesi "Titanic: Machine Learning From Disaster" ile kaggle'a ve makine öğrenmesine giriş yapacağız."
 ---
 
 Merhabalar, bugün sizler ile [Kaggle](https://www.kaggle.com/)'a giriş yapacak ve bu platformun *'Hello World'*  problemi olarak bilinen [*Titanic: Machine Learning from Disaster*](https://www.kaggle.com/c/titanic) problemi üzerinden makine öğrenmesinin temellerini pratik olarak uygulamaya çalışacağız.
