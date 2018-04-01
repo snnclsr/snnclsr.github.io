@@ -16,7 +16,7 @@ Bu yazı boyunca
 gibi konulara değineceğiz. 
 
 Yeri geldikçe yeni kavramlardan bahsedip, açıklamalarını yapmaya çalıştım. Daha fazla bilgi verebilmek adına da linkler ekledim.
-Hem okuyup hem de sonuçları direk gözlemlemek isterseniz [bu]() linkteki jupyter notebook'u indirebilirsiniz.
+Hem okuyup hem de sonuçları direk gözlemlemek isterseniz [bu](https://github.com/snnclsr/blog-kodlar/tree/master/kaggle-titanic) linkteki jupyter notebook'u indirebilirsiniz.
 
 ### Kütüphanelerin Eklenmesi
 
