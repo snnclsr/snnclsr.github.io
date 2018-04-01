@@ -295,12 +295,6 @@ died["Age"].plot.hist(alpha=0.5, color='blue', bins=50)
 plt.legend(["Survived", "Died"])
 plt.show()
 ```
-
-Mar 14, 2018
-
-Bu yazıda Naive Bayes sınıflandırma algoritmasını kullanarak atılan bir mesajın(sms) spam olup olmadığını tahmin eden bir model geliştireceğiz. Algoritmanın nasıl çalıştığını anlamak isterseniz 1.Bölümü okumanızı tavsiye ederim.
-
-Sınıflandırma algoritmasını, python programlama dilinde scikit-learn(sklearn) kütüphanesini kullanarak 
 <div class="imgcap">
 <img src="{{site.url}}/_assets/titanic_files/output_18_0.png">
 </div>
