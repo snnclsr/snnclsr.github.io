@@ -240,7 +240,7 @@ plt.show()
 
 
 <div class="imgcap">
-<img src="{{site.url}}/_assets/titanic_files/output_13_0.png">
+<img src="{{site.url}}/assets/titanic_files/output_13_0.png">
 </div>
 
 Burada gördüğünüz üzere kadın yolcuların hayatta kalma oranları erkek yolculara göre daha fazla.
@@ -296,7 +296,7 @@ plt.legend(["Survived", "Died"])
 plt.show()
 ```
 <div class="imgcap">
-<img src="{{site.url}}/_assets/titanic_files/output_18_0.png">
+<img src="{{site.url}}/assets/titanic_files/output_18_0.png">
 </div>
 
 Bu histograma bakarak çok net çıkarımlar yapmak biraz güç ancak bazı yaş aralıkları için yolcuların hayatta kalma oranlarının daha fazla olduğunu görebiliyoruz(Kırmızı barların mavi barlardan daha yüksek olduğu yerler). Bu edindiğimiz bilginin bize fayda sağlaması için bazı aralıklar belirleyerek sürekli özniteliği, kategorik bir özniteliğe dönüştüreceğiz. Bunun için [pd.cut()](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.cut.html) fonksiyonunu kullanacağız.
@@ -356,7 +356,7 @@ plt.show()
 ```
 
 <div>
-<img src="{{site.url}}/_assets/titanic_files/output_24_0.png" style='max-width: 100%;'>
+<img src="{{site.url}}/assets/titanic_files/output_24_0.png" style='max-width: 100%;'>
 </div>
 
 İlk başta bahsetmiş olduğumuz kadın ve çocukların hayatta kalma olasılığının daha fazla olduğunu burada da görüyoruz.
@@ -616,7 +616,7 @@ plt.show()
 ```
 
 <div class="imgcap">
-<img src="{{site.url}}/_assets/titanic_files/output_36_0.png">
+<img src="{{site.url}}/assets/titanic_files/output_36_0.png">
 </div>
 
 
@@ -663,7 +663,7 @@ plt.show()
 ```
 
 <div class="imgcap">
-<img src="{{site.url}}/_assets/titanic_files/output_42_0.png">
+<img src="{{site.url}}/assets/titanic_files/output_42_0.png">
 </div>
 
 "Age" sütununa uygulamış olduğumuz yöntemi "Fare" sütunu için de uygulayalım.
@@ -840,7 +840,7 @@ plot_correlation_heatmap(train_data)
 
 
 <div>
-<img src="{{site.url}}/_assets/titanic_files/output_61_0.png" style='max-width: 80%;'>
+<img src="{{site.url}}/assets/titanic_files/output_61_0.png" style='max-width: 80%;'>
 </div>
 
 Burada koyu renkli kareler iki özniteliğin birbiriyle bağlantılı olduğunu gösteriyor.
