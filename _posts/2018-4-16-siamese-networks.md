@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Siyam Ağları(Siamese Networks) ve Yüz Doğrulama Sistemi"
-excerpt: "Naive Bayes algoritması kullanarak bir mesajın spam olup olmadığını tahmin eden bir program geliştireceğiz."
+excerpt: "Siyam Ağları kullanarak yüz doğrulama(face verification) sistemi geliştireceğiz."
 published: true
 comments: true
+mathjax: true
 ---
 
 Bir şeyleri görebilmek, tanıyabilmek görsel sistemimizin en önemli özelliklerinden bir tanesi. Bir elmayı, basketbol topunu veya yeni tanıştığımız bir insanı 1 veya 2 defa gördüğümüzde çok çabuk hatırlayabiliyor veya tanıyabiliyoruz. Örneğin daha önce basketbol topunu görmemiş olsanız ve ben sizlere basketbol topunun bir fotoğrafını göstersem bundan sonra basketbol topunu diğer toplardan çok rahat bir şekilde ayırt edebilirsiniz.
