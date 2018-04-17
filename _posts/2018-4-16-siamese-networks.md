@@ -2,7 +2,7 @@
 layout: post
 title: "Siyam Ağları(Siamese Networks) ve Yüz Doğrulama Sistemi"
 excerpt: "Siyam Ağları kullanarak yüz doğrulama(face verification) sistemi geliştireceğiz."
-published: true
+published: false
 comments: true
 mathjax: true
 ---
