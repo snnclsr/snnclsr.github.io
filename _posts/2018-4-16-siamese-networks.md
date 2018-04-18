@@ -47,7 +47,7 @@ $$ (1-Y)\frac{1}{2}{D_w}^2 + (Y)\frac{1}{2}{max(0,  m-D_w)}^2 $$
 
 Burada $$Y: $$ eğer girdi olarak verdiğimiz resimler aynı kişiye ait ise 1, farklı kişilere ait ise 0 oluyor. $D_w$ iki vektör arasındaki uzaklığı, $m$ ise *margin*'i temsil ediyor.
 
-Eğer iki resim arasındaki uzaklık 0 olursa, hata fonksiyonu (0 + 0) = 0 gibi bir sonuç üretecek ve bu yüzden türevler 0 olacak. Bu sebeple modelimizi eğitememiş olacağız. Bu problemi çözmek için *margin(m)* değerini hata fonksiyonumuza ekliyoruz ve bir çıktı üretmeye zorluyoruz. Daha ayrıntılı bir bilgi için [bu](https://hanxiao.github.io/2017/11/08/Optimizing-Contrastive-Rank-Triplet-Loss-in-Tensorflow-for-Neural/) yazıyı okuyabilirsiniz.
+Eğer iki resim arasındaki uzaklık 0 olursa, hata fonksiyonu (0 + 0) = 0 gibi bir sonuç üretecek ve bu yüzden türevler 0 olacak. Bu sebeple modelimizi eğitememiş olacağız. Bu problemi çözmek için *margin(m)* değerini hata fonksiyonumuza ekliyoruz ve bir çıktı üretmeye zorluyoruz. Daha ayrıntılı bir bilgi için [bu](http://yann.lecun.com/exdb/publis/pdf/hadsell-chopra-lecun-06.pdf) makaleyi okuyabilirsiniz.
 
 Gerekli altyapıyı oluşturduğumuza göre asıl problemimize geçiş yapabiliriz. Bu yazıda okuyucunun evrişimsel sinir ağları(convolutional neural networks) hakkında temel bir bilgiye sahip olduğunu varsaydım. İlgili yerlerde kısa kısa açıklamalar yapacağım ama derinlemesine bir anlatım olmayacak.
 Detaylı anlatım için Stanford Universitesi'nin [convolutional networks](http://cs231n.github.io/convolutional-networks/) yazısını okuyabilirsiniz.
