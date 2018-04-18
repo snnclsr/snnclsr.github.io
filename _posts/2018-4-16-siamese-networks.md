@@ -34,18 +34,18 @@ Yukarıda "aradaki fark" diye bir terim kullandık, bu terimi biraz daha açmak 
 ### Öklid Uzaklığı(Euclidean Distance)
 Bahsetmiş olduğumuz **fark** kavramının matematiksel karşılığına bakalım.
 
-$\sqrt{\sum_{i=1}^n (x_i-y_i)^2}$ 
+$$\sqrt{\sum_{i=1}^n (x_i-y_i)^2}$$
 
-Burada $x_i$ ve $y_i$, modelimizin üretmiş olduğu 2 vektör. Bu vektörler 4096 elemandan oluşuyor(model oluştururken buna tekrar değineceğiz). Eleman-eleman farkların karelerini topluyoruz ve karekökünü alıyoruz.
+Burada $$x_i$$ ve $$y_i$$, modelimizin üretmiş olduğu 2 vektör. Bu vektörler 4096 elemandan oluşuyor(model oluştururken buna tekrar değineceğiz). Eleman-eleman farkların karelerini topluyoruz ve karekökünü alıyoruz.
 
 ### Contrastive loss
 
 Yapay sinir ağlarının amacı hata fonksiyonunu(loss function) mümkün olan en düşük seviyeye getirmektir. Tahmin bazlı(prediction based) hata fonksiyonlarının aksine, burada uzaklık bazlı bir hata fonksiyonu tanımlayacağız.
 
-$ (1-Y)\frac{1}{2}{D_w}^2 + (Y)\frac{1}{2}{max(0,  m-D_w)}^2$
+$$ (1-Y)\frac{1}{2}{D_w}^2 + (Y)\frac{1}{2}{max(0,  m-D_w)}^2 $$
 
 
-Burada $Y: $ eğer girdi olarak verdiğimiz resimler aynı kişiye ait ise 1, farklı kişilere ait ise 0 oluyor. $D_w$ iki vektör arasındaki uzaklığı, $m$ ise *margin*'i temsil ediyor.
+Burada $$Y: $$ eğer girdi olarak verdiğimiz resimler aynı kişiye ait ise 1, farklı kişilere ait ise 0 oluyor. $D_w$ iki vektör arasındaki uzaklığı, $m$ ise *margin*'i temsil ediyor.
 
 Eğer iki resim arasındaki uzaklık 0 olursa, hata fonksiyonu (0 + 0) = 0 gibi bir sonuç üretecek ve bu yüzden türevler 0 olacak. Bu sebeple modelimizi eğitememiş olacağız. Bu problemi çözmek için *margin(m)* değerini hata fonksiyonumuza ekliyoruz ve bir çıktı üretmeye zorluyoruz. Daha ayrıntılı bir bilgi için [bu](https://hanxiao.github.io/2017/11/08/Optimizing-Contrastive-Rank-Triplet-Loss-in-Tensorflow-for-Neural/) yazıyı okuyabilirsiniz.
 
