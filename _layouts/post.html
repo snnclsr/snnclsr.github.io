@@ -13,24 +13,10 @@ layout: default
   </article>
 
   <!-- mathjax -->
-  <!--
   {% if page.mathjax %}
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/javascript">
-      MathJax.Hub.Config({
-        extensions: ["tex2jax.js"],
-        jax: ["input/TeX", "output/HTML-CSS"],
-        tex2jax: {
-          inlineMath: [ ['$', '$'], ["\\(","\\)"] ],
-          displayMath: [ ['$$', '$$'], ["\\[","\\]" ] ],
-          processEscapes: true
-        },
-        "HTML-CSS": { availableFonts: ["LaTeX"] }
-      });
-      </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
   {% endif %}
-  -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
 <!-- disqus comments -->
   {% if page.comments %}
  <div id="disqus_thread"></div>
