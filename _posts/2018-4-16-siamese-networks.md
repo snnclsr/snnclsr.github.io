@@ -2,7 +2,7 @@
 layout: post
 title: "Siyam Ağları(Siamese Networks) ve Yüz Doğrulama Sistemi"
 excerpt: "Siyam Ağları kullanarak yüz doğrulama(face verification) sistemi geliştireceğiz."
-published: false
+published: true
 comments: true
 mathjax: true
 ---
@@ -77,40 +77,9 @@ warnings.simplefilter('ignore')
     Using TensorFlow backend.
 
 
-Birazdan oluşturacağımız model, girdi olarak (105, 105) boyutunda resimler alıyor. Ancak bizim indirdiğimiz resimlerin boyutu (92, 112). Bu resimleri (105, 105) şeklinde tekrardan boyutlandıralım ve *processed_images* adlı klasöre kaydedelim.
+Birazdan oluşturacağımız model, girdi olarak (105, 105) boyutunda resimler alıyor. Ancak bizim indirdiğimiz resimlerin boyutu (92, 112). Bu yüzden resimleri okurken (105, 105) şeklinde tekrardan boyutlandıracağız.
 
-
-```python
-processed_dir = 'processed_images/'
-if not os.path.exists(processed_dir):
-    os.makedirs(processed_dir)
-
-folders = range(1, 41)
-data_path = "face_recognition/orl_faces/"
-
-def process_images():
-    for i in folders:
-        img_dir = data_path + 's' + str(i)
-        img_paths = [img_dir + '/' + img for img in os.listdir(img_dir)]
-
-        for img_path in img_paths:
-            img = cv2.imread(img_path)
-            img = cv2.resize(img, (105, 105), interpolation = cv2.INTER_AREA)
-            p_dir = processed_dir + "s" + str(i)
-            if not os.path.exists(p_dir):
-                os.makedirs(p_dir)
-            
-            img_name = img_path[30:]
-            img_name = img_name.split('.')
-            if i >= 10:
-                cv2.imwrite(os.path.join(p_dir + '/', img_name[0][1:] + '.png'), img)
-            else:
-                cv2.imwrite(os.path.join(p_dir + '/', img_name[0] + '.png'), img)
-                
-process_images()
-```
-
-Evet şimdi de resimlerimizi tek tek yükleyelim. Burada *read_batch_imgs()* isimli yardımcı bir fonksiyon yazdık. Her bir klasöre tek tek bakıp içerisindeki resimleri yüklüyoruz. Sonra da *generate_images()* fonksiyonunun içerisinde her bir kişinin 10 resmini alıp numpy array'ine dönüştürüyoruz. En son ise 255 ile bölerek normalizasyon işlemi yapıyoruz. Bunu yapmamızın sebebi sinir ağlarının küçük değerli girdiler ile daha iyi çalışması.
+Burada *read_batch_imgs()* isimli yardımcı bir fonksiyon yazdık. Her bir klasöre tek tek bakıp içerisindeki resimleri yüklüyoruz. Sonra da *generate_images()* fonksiyonunun içerisinde her bir kişinin 10 resmini alıp numpy array'ine dönüştürüyoruz. En son ise 255 ile bölerek normalizasyon işlemi yapıyoruz. Bunu yapmamızın sebebi sinir ağlarının küçük değerli girdiler ile daha iyi çalışması.
 
 
 ```python
