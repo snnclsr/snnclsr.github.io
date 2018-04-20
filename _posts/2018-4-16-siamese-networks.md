@@ -88,7 +88,7 @@ Burada *read_batch_imgs()* isimli yardımcı bir fonksiyon yazdık. Her bir klas
 def read_batch_imgs(current_person):
     imgs = []
     for j in range(1, 11):
-        img = cv2.resize(cv2.imread('processed_images/s{}/{}.png'.format(current_person, j), cv2.IMREAD_GRAYSCALE),
+        img = cv2.resize(cv2.imread('ocr_faces/s{}/{}.png'.format(current_person, j), cv2.IMREAD_GRAYSCALE),
                          (105, 105))
         imgs += [[img]]
     
