@@ -50,7 +50,9 @@ Burada $$Y: $$ eğer girdi olarak verdiğimiz resimler aynı kişiye ait ise 1, 
 Eğer iki resim arasındaki uzaklık 0 olursa, hata fonksiyonu (0 + 0) = 0 gibi bir sonuç üretecek ve bu yüzden türevler 0 olacak. Bu sebeple modelimizi eğitememiş olacağız. Bu problemi çözmek için *margin(m)* değerini hata fonksiyonumuza ekliyoruz ve bir çıktı üretmeye zorluyoruz. Daha ayrıntılı bir bilgi için [bu](http://yann.lecun.com/exdb/publis/pdf/hadsell-chopra-lecun-06.pdf) makaleyi okuyabilirsiniz.
 
 Gerekli altyapıyı oluşturduğumuza göre asıl problemimize geçiş yapabiliriz. Bu yazıda okuyucunun evrişimsel sinir ağları(convolutional neural networks) hakkında temel bir bilgiye sahip olduğunu varsaydım. İlgili yerlerde kısa kısa açıklamalar yapacağım ama derinlemesine bir anlatım olmayacak.
-Detaylı anlatım için Stanford Universitesi'nin [convolutional networks](http://cs231n.github.io/convolutional-networks/) yazısını okuyabilirsiniz.
+Detaylı anlatım için Stanford Universitesi'nin [convolutional networks](http://cs231n.github.io/convolutional-networks/) yazısını okuyabilirsiniz. 
+
+Kodun tamamına [bu](https://github.com/snnclsr/blog-kodlar/blob/master/siyam_aglari_yuz_dogrulama/siyam_aglari_yuz_dogrulama.ipynb) adresten erişebilirsiniz.
 
 
 *Kütüphaneleri ekleyerek başlayalım.*
