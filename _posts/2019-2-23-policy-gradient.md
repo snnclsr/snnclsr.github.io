@@ -2,7 +2,7 @@
 layout: post
 title: "Policy Gradients"
 excerpt: "Policy Gradients"
-published: false
+published: true
 comments: true
 ---
 
@@ -28,7 +28,8 @@ Agent interacts with the environment on different time steps. At every time step
 
 Agents objective is to find actions that maximize the reward on every time step (i.e. cumulative reward).
 
-<div style="width:image width px; font-size:80%; text-align:center; "><img src="agent_interaction.png" alt="alternate text" width="width" height="height" style="padding-bottom:0.5em; " /><strong>Source</strong>: Sutton&Barto's RL Book</div>
+<div style="width:image width px; font-size:80%; text-align:center; "><img src="{{site_url}}/assets/policy_gradients/agent_interaction.png" alt="alternate text" width="width" height="height" style="padding-bottom:0.5em; " /><strong>Source</strong>: Sutton&Barto's RL Book</div>
+
 
 To maximize the reward, there are two main approaches in reinforcement learning. First one is **value functions** and the second one is **policy gradients**. Our concern in this article will be on policy gradients. 
 
@@ -164,12 +165,9 @@ We represent the value function with the neural network again and update its par
 
 <div style="display: flex;">
   <div style="flex: 33.33%; padding: 5px;">
-    <img src="{{site_url}}/gifs/CartPole-v0.gif" alt="Cart Pole" style="width:100%">
+    <img src="{{site_url}}/assets/policy_gradients/CartPole-v0.png" alt="Cart Pole" style="width:100%">
   </div>
   <div style="flex: 33.33%; padding: 5px;">
-    <img src="{{site_url}}/gifs/LunarLander-v2.gif" alt="Lunar Lander" style="width:100%">
-  </div>
-  <div style="flex: 33.33%; padding: 5px;">
-    <img src="{{site_url}}/gifs/InvertedPendulum-v1.gif" alt="Inverted Pendulum" style="width:100%">
+    <img src="{{site_url}}/assets/policy_gradients/InvertedPendulum-v1.png" alt="Inverted Pendulum" style="width:100%">
   </div>
 </div>
