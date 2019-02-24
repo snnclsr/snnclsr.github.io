@@ -34,7 +34,7 @@ Agents objective is to find actions that maximize the reward on every time step 
 To maximize the reward, there are two main approaches in reinforcement learning. First one is **value functions** and the second one is **policy gradients**. Our concern in this article will be on policy gradients. 
 
 ### Value Functions
-Before going to deep, let's briefly introduce the value functions. I believe that even with a small introduction it will help us to understand policy gradients better. Value functions give us the quality of state or state-action pair. State-value function $$$V^\pi (s)$$ gives us the expected value of being in state $$s$$ and then following the policy $$\pi$$ afterward. Action-value function $$Q^\pi (s)$$ gives us the expected value of being in state $$s$$, taking an action $$a$$ and then following the policy $$\pi$$ afterward. There is a close relation between these two functions: $$V^\pi (s) = \max_a Q^\pi (s)$$. 
+Before going to deep, let's briefly introduce the value functions. I believe that even with a small introduction it will help us to understand policy gradients better. Value functions give us the quality of state or state-action pair. State-value function $$V^\pi (s)$$ gives us the expected value of being in state $$s$$ and then following the policy $$\pi$$ afterward. Action-value function $$Q^\pi (s)$$ gives us the expected value of being in state $$s$$, taking an action $$a$$ and then following the policy $$\pi$$ afterward. There is a close relation between these two functions: $$V^\pi (s) = \max_a Q^\pi (s)$$. 
 
 > After learning the value functions it's easy to derive policy by acting greedily in the environment.
     
