@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Hakkında/About
-permalink: /about
+permalink: /about/
 ---
 
 Hi, I'm Sinan. I am a Computer Engineering student at Kocaeli University. I'm writing practical and theoretical posts on machine learning and deep learning. 
