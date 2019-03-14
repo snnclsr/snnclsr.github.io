@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: "Kaggle: Felaketten Çıkarılan Dersler"
+title: "[T] Kaggle: Felaketten Çıkarılan Dersler"
 excerpt: "Kaggle'ın ünlü problemi 'Titanic: Machine Learning From Disaster' ile kaggle'a ve makine öğrenmesine giriş yapacağız."
 ---
 
