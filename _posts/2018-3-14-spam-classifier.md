@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Naive Bayes Sınıflandırma Algoritması(Bölüm 2-Pratik)"
+title: "[T] Naive Bayes Sınıflandırma Algoritması(Bölüm 2-Pratik)"
 excerpt: "Naive Bayes algoritması kullanarak bir mesajın spam olup olmadığını tahmin eden bir program geliştireceğiz."
 published: true
 comments: true
