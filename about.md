@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Hakkında/About
+title: About
 permalink: /about/
 ---
 
