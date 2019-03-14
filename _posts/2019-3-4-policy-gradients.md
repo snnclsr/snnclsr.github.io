@@ -2,7 +2,7 @@
 layout: post
 title: "Policy Gradients"
 excerpt: "In this post, we are going to see one of the main approach of reinforcement learning, policy gradients. We will present a step by step proof and derive a useful algorithm. We will also talk about some issues and how to resolve them."
-published: false
+published: true
 comments: true
 mathjax: true
 ---
@@ -197,4 +197,3 @@ And that's it. I tried to explain policy gradients as clear as possible from my 
 [3] David Silver's Lecture on Policy Gradients [Slide](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/pg.pdf) [Video](https://www.youtube.com/watch?v=KHZVXao4qXs&list=PLweqsIcZJac7PfiyYMvYiHfOFPg9Um82B&index=7)
 
 [4] [Blog Post by Lilian Weng on Policy Gradient Algorithms](https://lilianweng.github.io/lil-log/2018/04/08/policy-gradient-algorithms.html)
-
