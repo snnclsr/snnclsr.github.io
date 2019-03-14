@@ -1,8 +1,8 @@
 # Site settings
 title: Sinan Çalışır
 email: 
-description: "Makine öğrenmesi ve Derin Öğrenme"
-baseurl: "/snnclsr.github.io"
+description: ""
+baseurl: ""
 url: ""
 twitter_username: snnclsr
 github_username:  snnclsr
