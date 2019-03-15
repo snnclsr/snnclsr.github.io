@@ -185,9 +185,9 @@ We represent the value function with the neural network again and update its par
   </div>
 </div>
 
-Code for this post can be found [here]().
+Code for this post can be found [here](https://github.com/snnclsr/rl/blob/master/vpg.py).
 
-And that's it. I tried to explain policy gradients as clear as possible from my point of view. Please leave a comment if anything is unclear or wrong. 
+And that's it. I tried to explain policy gradients as clear as possible. Please leave a comment if anything is unclear or wrong. 
 
 ## References
 
