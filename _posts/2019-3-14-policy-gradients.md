@@ -2,7 +2,7 @@
 layout: post
 title: "[E] Policy Gradients"
 excerpt: "In this post, we are going to see one of the main approach of reinforcement learning, policy gradients. We will present a step by step proof and derive a useful algorithm. We will also talk about some issues and how to resolve them."
-published: false
+published: true
 comments: true
 mathjax: true
 ---
