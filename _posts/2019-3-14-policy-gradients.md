@@ -2,7 +2,7 @@
 layout: post
 title: "[E] Policy Gradients"
 excerpt: "In this post, we are going to see one of the main approach of reinforcement learning, policy gradients. We will present a step by step proof and derive a useful algorithm. We will also talk about some issues and how to resolve them."
-published: false
+published: true
 comments: true
 mathjax: true
 ---
@@ -185,6 +185,7 @@ We represent the value function with the neural network again and update its par
   </div>
 </div>
 
+Code for this post can be found [here]().
 
 And that's it. I tried to explain policy gradients as clear as possible from my point of view. Please leave a comment if anything is unclear or wrong. 
 
