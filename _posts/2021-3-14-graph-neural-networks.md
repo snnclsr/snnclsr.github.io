@@ -7,7 +7,6 @@ comments: true
 mathjax: true
 ---
 
-
 # Graph Neural Networks
 
 > Graph Neural Networks (GNNs) is currently the primer approach in applying neural networks to relational data. In this post, we will see the basic formulation and different variations of the GNNs.
