@@ -24,7 +24,7 @@ mathjax: true
 * [Conclusion](#Conclusion)
 * [References](#References)
 
-## A Brief Introduction to Graphs
+<h2 id="#A-Brief-Introduction-to-Graphs">A Brief Introduction to Graphs</h2>
 
 Graphs are structures that can store complex relations (edges) between objects (nodes). These relations can happen in many shapes. For instance, friendships in the social networks, [protein-protein interactions (PPIs)](https://en.wikipedia.org/wiki/Protein%E2%80%93protein_interaction), or the user-product interaction as in the recommender systems. We can define all of these problems as a graph and answer lots of questions. For example, what should we recommend to some particular user, what is the role of specific proteins, or which users are fake (bots) in social media? 
 
@@ -113,36 +113,35 @@ Graphs can be directed/undirected depending on the problem. For example, the rel
 
 Apart from being directed/undirected, graphs can also have different types of nodes which we call heterogeneous graphs. For example in the recommender systems, we can represent the users and the items (e.g. movies or products) as separate nodes.
 
-## Machine Learning on graphs
+<h2 id="#Machine-Learning-on-graphs">Machine Learning on graphs</h2>
 
 There are multiple types of problem formulations in the graph domain that can be solved with supervised/unsupervised settings similar to classical machine learning. Here we will touch upon four of them.
 
-#### 1. **Node Classification/Regression**
+<h4 id="#1.-Node-Classification/Regression">1. Node Classification/Regression</h4>
 
 In this type of problem, we aim to solve the node-level tasks such as the detection of fake users (bots) in social media. Bots tend to follow similar patterns in terms of actions (following/posting). We represent the users as nodes in the graph and learn node embeddings based on the graph structure and input features like follower count and post frequency. Then we classify the users based on the node embeddings.
 
-#### 2. **Link Prediction**
+<h4 id="#2.-Link-Prediction">2. Link Prediction</h4>
 
-Link prediction is a task to understand the potential relations between the nodes. For instance, in the recommender systems, we can represent the users and the products as nodes in the graph. We can add edges based on the user purchases and define the problem as a link prediction task. At test time, we can make predictions using the learned user and product embeddings and recommend products to users based on the prediction results such as 0/1. [KNOWLEDGE GRAPH EXAMPLE HERE (!!!)]
+Link prediction is a task to understand the potential relations between the nodes. For instance, in the recommender systems, we can represent the users and the products as nodes in the graph. We can add edges based on the user purchases and define the problem as a link prediction task. At test time, we can make predictions using the learned user and product embeddings and recommend products to users based on the prediction results such as 0/1.
 
-#### 3. **Community Detection & Clustering**
+<h4 id="#3.-Community-Detection-&-Clustering">3. Community Detection & Clustering<h4>
 
 In community detection & clustering problems, we aim to group similar nodes. For example, in citation graphs, we can represent papers as nodes and create edges between the nodes based on citations. After learning the unsupervised representation of nodes, we can apply any clustering algorithm like KMeans to generate clusters/groups.
 
-#### 4. **Graph Classification/Regression**
+<h4 id="#4.-Graph-Classification/Regression">Graph Classification/Regression</h4>
 
 Graph-based tasks are similar to node-level tasks but require making predictions about the full graph instead of just a single node or link. For example, understanding the [threads in the Reddit](https://snap.stanford.edu/data/reddit_threads.html) is a discussion-based or not is a binary graph-classification task. Here the nodes are the users, and the links are the replies between them. To make predictions on the graph, it is also essential to incorporate the global structure together with the local features.
 
 After discussing the several problems related to graphs, let's see how we can apply the neural networks to the graph data.
 
-#### Simple Naive Approach (Adjacency Matrix)
+<h4 id="#Simple-Naive-Approach-(Adjacency-Matrix)">Simple Naive Approach (Adjacency Matrix)</h4>
 
 One basic idea to use the neural networks with the graph-structured data is to use the adjacency matrix as an input. We can flatten the adjacency matrix to be a 1d vector and supply it to the network. The major drawback of this approach is that the adjacency matrix is not permutation invariant. Different ordering of the nodes changes the adjacency matrix and hence the input to the neural network. We will have different outputs for the same graph by just reordering the adjacency matrix. This is not desirable since the input graph is essentially the same. So, one main property that we need to satisfy is the permutation invariance when applying neural networks.
 
 We saw that the adjacency matrix as an input is not sufficient. What can we do? It is time for Graph Neural Networks to come into the stage.
 
-
-## Graph Neural Networks (Formulation)
+<h2 id="#Graph-Neural-Networks-(Formulation)">Graph Neural Networks (Formulation)</h2> 
 
 The motivating idea behind the GNNs is applying the neural networks to the graphs to extract useful features. The fundamental principle is the exchange information between the nodes. This communication is called **message passing** and, updating the node information with neural networks is called **neural message passing**.
 
@@ -151,7 +150,7 @@ There are two key components in the GNNs framework:
 * **Aggregation**: Aggregating the information from the neighbors.
 * **Update**: Updating the node information based on the previous information embedding and aggregated message.
 
-#### Neural Message Passing
+<h4 id="#Neural-Message-Passing">Neural Message Passing</h4>
 
 As we stated earlier, neural message passing is the process of exchanging embedding messages between the nodes and updating with the neural networks. Every message passing layer aims to **aggregate** the neighbor's information and create a message vector. The principal idea is that every node creates its computation graph and proceed information from its neighborhood. Here is a simple illustration of the process:
 
@@ -216,7 +215,7 @@ The self-attention operation here is applied to the full graph. The authors prop
 
 Additionally, as in [Vaswani et al.,](https://arxiv.org/abs/1706.03762) we can use multi-head attention as well. By applying multiple attention heads independent from each other, we increase the representation power and stabilize the training.
 
-## Examples
+<h2 id="#Examples">Examples</h2>
 
 The complete code example for this blog post can be found in this repository. The code uses [pytorch-geometric](https://github.com/rusty1s/pytorch_geometric) library. Here we will focus only on some small parts of it and the final output image. We use the Cora dataset as our prediction task. The Cora dataset consists of 2708 scientific publications and includes seven classes. The citation graph consists of 5429 edges. Each publication has a 1433 length feature vector which indicates the absence/presence of particular words from the 1433 length dictionary (bag of words features). 
 
@@ -271,7 +270,7 @@ def test(data):
 We define a simple training loop here. An important thing to remember is that we pass the input features (1433 length vector) together with the edge information to the model. [`GATConv`](https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html?highlight=GATConv#torch_geometric.nn.conv.GATConv) layer handles the message passing state in the background. You can find additional information on that part from [this](https://pytorch-geometric.readthedocs.io/en/latest/notes/create_gnn.html) link which describes the message passing procedure in detail. 
 
 ```python
-for epoch in range(1, 201):
+for epoch in range(1, 101):
     train(data)
     if epoch % 20 == 0:
         train_acc, val_acc, test_acc = test(data)
@@ -285,7 +284,7 @@ As a final step, we can visualize the learned embeddings for the publications. W
     <img src="{{site_url}}/assets/gnn/attention_graph.png" />
 </div>
 
-## Conclusion
+<h2 id="#Conclusion">Conclusion</h2>
 
 In this post, we learned that:
 
@@ -299,7 +298,7 @@ and finally, Graph Attention Networks with some code examples. Andd, that was it
 
 Thanks for reading!
 
-## References
+<h2 id="#References">References</h2>
 
 1. [Graph Representation Learning Book by William L. Hamilton](https://www.cs.mcgill.ca/~wlh/grl_book/)
 2. [CS224W: Machine Learning with Graphs](http://web.stanford.edu/class/cs224w/)
