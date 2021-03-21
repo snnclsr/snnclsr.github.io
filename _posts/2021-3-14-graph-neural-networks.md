@@ -125,11 +125,11 @@ In this type of problem, we aim to solve the node-level tasks such as the detect
 
 Link prediction is a task to understand the potential relations between the nodes. For instance, in the recommender systems, we can represent the users and the products as nodes in the graph. We can add edges based on the user purchases and define the problem as a link prediction task. At test time, we can make predictions using the learned user and product embeddings and recommend products to users based on the prediction results such as 0/1.
 
-<h4 id="#3.-Community-Detection-&-Clustering">3. Community Detection & Clustering<h4>
+<h4 id="#3.-Community-Detection-&-Clustering">3. Community Detection & Clustering</h4>
 
 In community detection & clustering problems, we aim to group similar nodes. For example, in citation graphs, we can represent papers as nodes and create edges between the nodes based on citations. After learning the unsupervised representation of nodes, we can apply any clustering algorithm like KMeans to generate clusters/groups.
 
-<h4 id="#4.-Graph-Classification/Regression">Graph Classification/Regression</h4>
+<h4 id="#4.-Graph-Classification/Regression">4. Graph Classification/Regression</h4>
 
 Graph-based tasks are similar to node-level tasks but require making predictions about the full graph instead of just a single node or link. For example, understanding the [threads in the Reddit](https://snap.stanford.edu/data/reddit_threads.html) is a discussion-based or not is a binary graph-classification task. Here the nodes are the users, and the links are the replies between them. To make predictions on the graph, it is also essential to incorporate the global structure together with the local features.
 
