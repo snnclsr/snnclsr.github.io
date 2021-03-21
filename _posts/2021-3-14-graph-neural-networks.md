@@ -22,6 +22,7 @@ mathjax: true
     * [Neural Message Passing](#Neural-Message-Passing)
 * [Examples](#Examples)
 * [Conclusion](#Conclusion)
+* [References](#References)
 
 ## A Brief Introduction to Graphs
 
@@ -33,7 +34,7 @@ To make things a little bit more concrete, let's start by defining the graphs fo
 
 Graphs $G = (V, E)$ include set of nodes $(V)$ and set of edges $(E)$. The connection between the nodes is called edges. We can represent the graph as an adjacency matrix $(A)$ where every cell in the matrix is either 0 or 1. If there is a weight between the nodes the adjacency matrix can take arbitrary numbers as well. We can also represent the graphs via the edge list. In this type of representation, we only store the edges between the nodes. Here is an example of a toy graph with only 6 nodes and 7 (undirected) edges.
 
-<img src="first_graph.PNG" alt="drawing" width="200"/>
+<img src="{{site_url}}/assets/gnn/first_graph.PNG" alt="drawing" width="200"/>
 
 > **Adjacency matrix:**
 
@@ -48,7 +49,7 @@ Graphs $G = (V, E)$ include set of nodes $(V)$ and set of edges $(E)$. The conne
 
 > **Edge list**: [(A, B), (B, C), (B, D), (C, D), (D, E), (D, F), (E, F)]
 
-Graphs can be directed/undirected depending on the problem. For example, the relations on the Facebook social graph are undirected. If you add someone as a friend, you become a friend mutually. On the other side, if you follow someone on Twitter, the relation is directed. You don't follow each other mutually. 
+Graphs can be directed/undirected depending on the problem. For example, the relations on the Facebook social graph are undirected. If you add someone as a friend, you become a friend mutually. On the other side, if you follow someone on Twitter, the relation is directed. It doesn't apply vice versa.
 
 Apart from being directed/undirected, graphs can also have different types of nodes which we call heterogeneous graphs. For example in the recommender systems, we can represent the users and the items (e.g. movies or products) as separate nodes.
 
@@ -83,8 +84,6 @@ We saw that the adjacency matrix as an input is not sufficient. What can we do? 
 
 ## Graph Neural Networks (Formulation)
 
-![](gnn_computation_graph.png)
-
 The motivating idea behind the GNNs is applying the neural networks to the graphs to extract useful features. The fundamental principle is the exchange information between the nodes. This communication is called **message passing** and, updating the node information with neural networks is called **neural message passing**.
 
 There are two key components in the GNNs framework:
@@ -94,9 +93,11 @@ There are two key components in the GNNs framework:
 
 #### Neural Message Passing
 
-As we stated earlier, neural message passing is the process of exchanging embedding messages between the nodes and updating with the neural networks. Every message passing layer aims to **aggregate** the neighbor's information and create a message vector. 
+As we stated earlier, neural message passing is the process of exchanging embedding messages between the nodes and updating with the neural networks. Every message passing layer aims to **aggregate** the neighbor's information and create a message vector. The principal idea is that every node creates its computation graph and proceed information from its neighborhood. Here is a simple illustration of the process:
 
-Here is the abstract definition:
+<div><img src="{{site_url}}/assets/gnn/gnn_computation_graph.png" /></div>
+
+In this image, there are two GNN layers that make computations based on the 1-hop neighborhood of its input node. Now lets understand the general idea with some equations and dive into the ocean. Here is the abstract definition of that image:
 $$
 \begin{align}
 h_{u}^{(k+1)} &= UPDATE^{(k)}\bigg(h_{u}^{(k)}, AGGREGATE^{(k)}(\{h_v^{(k)}, \forall{v} \in \mathcal{N}(u)\})\bigg) \\
@@ -155,16 +156,89 @@ Additionally, as in [Vaswani et al.,](https://arxiv.org/abs/1706.03762) we can u
 
 ## Examples
 
-The complete code example for this blog can be found on this repository. Here we will focus only the output image. In the below graph, we use the [Cora] dataset as our prediction task. Cora dataset includes 2708 papers from 
+The complete code example for this blog post can be found in this repository. The code uses [pytorch-geometric](https://github.com/rusty1s/pytorch_geometric) library. Here we will focus only on some small parts of it and the final output image. We use the Cora dataset as our prediction task. The Cora dataset consists of 2708 scientific publications and includes seven classes. The citation graph consists of 5429 edges. Each publication has a 1433 length feature vector which indicates the absence/presence of particular words from the 1433 length dictionary (bag of words features). 
 
+We used Graph Attention Networks (GAT) as our feature extractor. Then we classify the papers with an MLP classifier in an end-to-end manner. Here is the definition of the model class in Pytorch. 
 
-![](attention_graph.png)
+```python
+class Net(torch.nn.Module):
+    def __init__(self, dropout_p=0.6):
+        super(Net, self).__init__()
+        
+        self.dropout_p = dropout_p
+        self.conv1 = GATConv(dataset.num_features, 8, heads=8, dropout=dropout_p)
+        self.conv2 = GATConv(8 * 8, 8, heads=6, concat=True, dropout=dropout_p)
+        self.classifier = nn.Linear(48, dataset.num_classes)
+        
+    def extract_features(self, x, edge_index, return_attention_weights=True):
+        x = F.dropout(x, p=self.dropout_p, training=self.training)
+        x = F.elu(self.conv1(x, edge_index))
+        x = F.dropout(x, p=self.dropout_p, training=self.training)
+        return self.conv2(x, edge_index, return_attention_weights=return_attention_weights)
+    
+    def forward(self, x, edge_index):
+        features, _ = self.extract_features(x, edge_index)
+        x = self.classifier(features)
+        return F.log_softmax(x, dim=-1)
+```
 
-
-## Conclusion
-
+We define two GATConv and one linear classifier layer. We use six heads with a feature vector of length 8. Before the classification layer, we concatenate these vectors and create the final 48 length feature vector. After the classification layer, we take the log_softmax to convert the logits to log probabilities.
 
 
 ```python
 
+def train(data):
+    model.train()
+    optimizer.zero_grad()
+    out = model(data.x, data.edge_index)
+    loss = F.nll_loss(out[data.train_mask], data.y[data.train_mask])
+    loss.backward()
+    optimizer.step()
+
+def test(data):
+    model.eval()
+    out, accs = model(data.x, data.edge_index), []
+    for _, mask in data('train_mask', 'val_mask', 'test_mask'):
+        pred = out[mask].max(1)[1]
+        acc = pred.eq(data.y[mask]).sum().item() / mask.sum().item()
+        accs.append(acc)
+    return accs
+    
 ```
+
+We define a simple training loop here. An important thing to remember is that we pass the input features (1433 length vector) together with the edge information to the model. [`GATConv`](https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html?highlight=GATConv#torch_geometric.nn.conv.GATConv) layer handles the message passing state in the background. You can find additional information on that part from [this](https://pytorch-geometric.readthedocs.io/en/latest/notes/create_gnn.html) link which describes the message passing procedure in detail. 
+
+```python
+for epoch in range(1, 201):
+    train(data)
+    if epoch % 20 == 0:
+        train_acc, val_acc, test_acc = test(data)
+        print(f'Epoch: {epoch:03d}, Train: {train_acc:.4f}, Val: {val_acc:.4f}, '
+              f'Test: {test_acc:.4f}')
+```
+
+As a final step, we can visualize the learned embeddings for the publications. We apply a TSNE algorithm to 48 dimensional vector and generate the 2d representation of the nodes. Additionally, we plot the edges between the nodes based on the attention weights which indicates the importance of neighborhood nodes while classifying the current node.  
+
+<div><img src="{{site_url}}/assets/gnn/attention_graph.png" /></div>
+
+## Conclusion
+
+In this post, we learned that:
+
+- What the graphs are,
+- What kind of problems can be solved with graphs,
+- Problem formulations on the graphs from a machine learning perspective,
+- Graph Neural Networks and the message passing idea,
+- Different message passing procedures
+
+and finally, Graph Attention Networks with some code examples. Andd, that was it :)
+
+Thanks for reading!
+
+## References
+
+1. [Graph Representation Learning Book by William L. Hamilton](https://www.cs.mcgill.ca/~wlh/grl_book/)
+2. [CS224W: Machine Learning with Graphs](http://web.stanford.edu/class/cs224w/)
+3. [PyTorch Geometric (PyG) Library](https://github.com/rusty1s/pytorch_geometric)
+4. [Inductive Representation Learning on Large Graphs](https://arxiv.org/abs/1706.02216)
+5. [Graph Attention Networks](https://arxiv.org/abs/1710.10903)
