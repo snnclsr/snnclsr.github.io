@@ -431,6 +431,6 @@ a:visited { color: #205caa; }
   border:solid #000 !important;
   border-width:1px 0 0 1px !important;
 } */
-tr, th, td {
-  border:solid #000 1px !important;
+tr, th, td:not(#empty){
+  border: thin grey 1px !important;
 }
