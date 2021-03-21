@@ -217,7 +217,7 @@ Additionally, as in [Vaswani et al.,](https://arxiv.org/abs/1706.03762) we can u
 
 <h2 id="Examples">Examples</h2>
 
-The complete code example for this blog post can be found in this repository. The code uses [pytorch-geometric](https://github.com/rusty1s/pytorch_geometric) library. Here we will focus only on some small parts of it and the final output image. We use the Cora dataset as our prediction task. The Cora dataset consists of 2708 scientific publications and includes seven classes. The citation graph consists of 5429 edges. Each publication has a 1433 length feature vector which indicates the absence/presence of particular words from the 1433 length dictionary (bag of words features). 
+The complete code example for this blog post can be found in [this](https://github.com/snnclsr/graph-attention-networks-cora) repository. The code uses [pytorch-geometric](https://github.com/rusty1s/pytorch_geometric) library. Here we will focus only on some small parts of it and the final output image. We use the Cora dataset as our prediction task. The Cora dataset consists of 2708 scientific publications and includes seven classes. The citation graph consists of 5429 edges. Each publication has a 1433 length feature vector which indicates the absence/presence of particular words from the 1433 length dictionary (bag of words features). 
 
 We used Graph Attention Networks (GAT) as our feature extractor. Then we classify the papers with an MLP classifier in an end-to-end manner. Here is the definition of the model class in Pytorch. 
 
