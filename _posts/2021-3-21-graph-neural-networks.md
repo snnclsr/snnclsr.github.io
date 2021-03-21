@@ -42,7 +42,7 @@ Graphs $$G = (V, E)$$ include set of nodes $$(V)$$ and set of edges $$(E)$$. The
 
 <table style="align-items: center; display:flex; justify-content:center;">
     <tr>
-        <th id="empty"> </th>
+        <th> </th>
         <th>A</th>
         <th>B</th>
         <th>C</th>
