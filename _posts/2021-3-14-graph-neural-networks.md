@@ -32,7 +32,7 @@ To make things a little bit more concrete, let's start by defining the graphs fo
 
 > Graphs are also called networks, but we try to restrict ourselves to use the term graph to prevent the potential confusion between the neural networks.
 
-Graphs $G = (V, E)$ include set of nodes $(V)$ and set of edges $(E)$. The connection between the nodes is called edges. We can represent the graph as an adjacency matrix $(A)$ where every cell in the matrix is either 0 or 1. If there is a weight between the nodes the adjacency matrix can take arbitrary numbers as well. We can also represent the graphs via the edge list. In this type of representation, we only store the edges between the nodes. Here is an example of a toy graph with only 6 nodes and 7 (undirected) edges.
+Graphs $$G = (V, E)$$ include set of nodes $$(V)$$ and set of edges $$(E)$$. The connection between the nodes is called edges. We can represent the graph as an adjacency matrix $$(A)$$ where every cell in the matrix is either 0 or 1. If there is a weight between the nodes the adjacency matrix can take arbitrary numbers as well. We can also represent the graphs via the edge list. In this type of representation, we only store the edges between the nodes. Here is an example of a toy graph with only 6 nodes and 7 (undirected) edges.
 
 <div style="text-align:center;">
     <img src="{{site_url}}/assets/gnn/first_graph.PNG" alt="drawing" width="200"/>
@@ -166,13 +166,13 @@ h_{u}^{(k+1)} &= UPDATE^{(k)}\bigg(h_{u}^{(k)}, AGGREGATE^{(k)}(\{h_v^{(k)}, \fo
 \end{align}
 $$
 
-In this equation, $m_{\mathcal{N}(u)}^{(k)}$ is defined as $ m_{\mathcal{N}(u)}^{(k)} = AGGREGATE^{(k)}(\{h_v^{(k)}, \forall{v} \in \mathcal{N}(u)\})$. The aggregation function here can be a non-parametric function such as mean or sum or more complex such as neural networks. To make the computations a bit of concrete, let's convert them to the equations which we can implement.
+In this equation, $$m_{\mathcal{N}(u)}^{(k)}$$ is defined as $$ m_{\mathcal{N}(u)}^{(k)} = AGGREGATE^{(k)}(\{h_v^{(k)}, \forall{v} \in \mathcal{N}(u)\})$$. The aggregation function here can be a non-parametric function such as mean or sum or more complex such as neural networks. To make the computations a bit of concrete, let's convert them to the equations which we can implement.
 
 $$
 h_{u}^{(k+1)} = \sigma\bigg(W_{\text{self}}^{(k)}h_{u}^{(k)} + W_{\text{neigh}}^{(k)}\sum_{\substack{v \in \mathcal{N} (u)}}h_v^{(k)} + b^{(k)}\bigg)
 $$
 
-Here $\sigma$ is an element-wise activation function (e.g. ReLU or Tanh) and $W_{\text{self}}$ and $W_{\text{neigh}}$ are learnable parameters. As you might notice, we used the $\sum$ operator as an aggregation function. If we want to map this equation to our abstract definition:
+Here $$\sigma$$ is an element-wise activation function (e.g. ReLU or Tanh) and $$W_{\text{self}}$$ and $$W_{\text{neigh}}$$ are learnable parameters. As you might notice, we used the $\sum$ operator as an aggregation function. If we want to map this equation to our abstract definition:
 
 $$
 m_{\mathcal{N}(u)} = \sum_{\substack{v \in \mathcal{N} (u)}}h_v
@@ -189,7 +189,7 @@ like this. Aggregation functions should satisfy an important property: being per
 
 It is possible to use the LSTMs as an aggregator function. As you know, LSTMs process the input sequentially. Although having more representational capability brings an advantage, our rule of being "permutation invariant" is unfortunately broken.  To overcome this problem, the neighbors of the nodes were given randomly in different orders to the LSTM network. Our goal here is to learn representations independent of the order. Lastly, the final message information is obtained by averaging the outputs.
 
-It is also possible to use **attention** as another aggregation function. As you might guess, not all the neighbors of a node have equal importance. For example, in citation graphs, some papers may have been cited from much more various articles. They may contain less valuable information when determining the class of a document (as it gets more citations). By applying attention, the importance of the nodes is learned. While any attention mechanism in the literature is possible to use, we will consider the self-attention as in [Veličković et al.](https://arxiv.org/abs/1710.10903) Firstly, we compute the attention between the node $i$ and $j$.
+It is also possible to use **attention** as another aggregation function. As you might guess, not all the neighbors of a node have equal importance. For example, in citation graphs, some papers may have been cited from much more various articles. They may contain less valuable information when determining the class of a document (as it gets more citations). By applying attention, the importance of the nodes is learned. While any attention mechanism in the literature is possible to use, we will consider the self-attention as in [(Veličković et al. 2017)](https://arxiv.org/abs/1710.10903). Firstly, we compute the attention between the node $$i$$ and $$j$$.
 
 $$
 \begin{equation} 
@@ -211,7 +211,7 @@ $$
 \end{equation}
 $$
 
-The self-attention operation here is applied to the full graph. The authors proposed to inject the graph structure in to the mechanism by performing masked-attention. So, only the attention on edge $e_{ij}$ considered where $j$ is in the neighborhood of node $i$.
+The self-attention operation here is applied to the full graph. The authors proposed to inject the graph structure in to the mechanism by performing masked-attention. So, only the attention on edge $$e_{ij}$$ considered where $$j$$ is in the neighborhood of node $$i$$.
 
 Additionally, as in [Vaswani et al.,](https://arxiv.org/abs/1706.03762) we can use multi-head attention as well. By applying multiple attention heads independent from each other, we increase the representation power and stabilize the training.
 
