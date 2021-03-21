@@ -2,7 +2,7 @@
 layout: post
 title: "[E] Graph Neural Networks"
 excerpt: "Graph Neural Networks (GNNs) is currently the primer approach in applying neural networks to relational data. In this post, we will see the basic formulation and different variations of the GNNs."
-published: false
+published: true
 comments: true
 mathjax: true
 ---
