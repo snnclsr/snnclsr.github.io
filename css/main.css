@@ -426,3 +426,11 @@ a:visited { color: #205caa; }
     margin: 0 0 15px; }
 
 }
+
+/* table {
+  border:solid #000 !important;
+  border-width:1px 0 0 1px !important;
+} */
+tr, th, td {
+  border:solid #000 1px !important;
+}
