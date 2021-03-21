@@ -40,6 +40,7 @@ Graphs $G = (V, E)$ include set of nodes $(V)$ and set of edges $(E)$. The conne
 
 > **Adjacency matrix:**
 
+<center>
 | |A|B|C|D|E|F|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |**A**|1|1|0|0|0|0|
@@ -48,6 +49,7 @@ Graphs $G = (V, E)$ include set of nodes $(V)$ and set of edges $(E)$. The conne
 |**D**|0|1|1|1|1|1|
 |**E**|0|0|0|1|1|1|
 |**F**|0|0|0|1|1|1|
+</center>
 
 > **Edge list**: [(A, B), (B, C), (B, D), (C, D), (D, E), (D, F), (E, F)]
 
