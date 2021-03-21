@@ -40,16 +40,75 @@ Graphs $G = (V, E)$ include set of nodes $(V)$ and set of edges $(E)$. The conne
 
 > **Adjacency matrix:**
 
-<center>
-| |A|B|C|D|E|F|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|**A**|1|1|0|0|0|0|
-|**B**|1|1|1|1|0|0|
-|**C**|0|1|1|1|0|0|
-|**D**|0|1|1|1|1|1|
-|**E**|0|0|0|1|1|1|
-|**F**|0|0|0|1|1|1|
-</center>
+
+<div style="align:center">
+    <table>
+        <tr>
+            <th> </th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+        </tr>
+        <tr>
+            <th>A</th>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>B</th>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>C</th>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>D</th>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <th>E</th>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <th>F</th>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+    </table>
+</div>
+
 
 > **Edge list**: [(A, B), (B, C), (B, D), (C, D), (D, E), (D, F), (E, F)]
 
