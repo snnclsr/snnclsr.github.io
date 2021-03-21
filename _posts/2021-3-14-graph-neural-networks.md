@@ -34,7 +34,9 @@ To make things a little bit more concrete, let's start by defining the graphs fo
 
 Graphs $G = (V, E)$ include set of nodes $(V)$ and set of edges $(E)$. The connection between the nodes is called edges. We can represent the graph as an adjacency matrix $(A)$ where every cell in the matrix is either 0 or 1. If there is a weight between the nodes the adjacency matrix can take arbitrary numbers as well. We can also represent the graphs via the edge list. In this type of representation, we only store the edges between the nodes. Here is an example of a toy graph with only 6 nodes and 7 (undirected) edges.
 
-<img src="{{site_url}}/assets/gnn/first_graph.PNG" alt="drawing" width="200"/>
+<div style="text-align:center;">
+    <img src="{{site_url}}/assets/gnn/first_graph.PNG" alt="drawing" width="200"/>
+</div>
 
 > **Adjacency matrix:**
 
@@ -95,7 +97,9 @@ There are two key components in the GNNs framework:
 
 As we stated earlier, neural message passing is the process of exchanging embedding messages between the nodes and updating with the neural networks. Every message passing layer aims to **aggregate** the neighbor's information and create a message vector. The principal idea is that every node creates its computation graph and proceed information from its neighborhood. Here is a simple illustration of the process:
 
-<div><img src="{{site_url}}/assets/gnn/gnn_computation_graph.png" /></div>
+<div style="text-align:center;">
+    <img src="{{site_url}}/assets/gnn/gnn_computation_graph.png" />
+</div>
 
 In this image, there are two GNN layers that make computations based on the 1-hop neighborhood of its input node. Now lets understand the general idea with some equations and dive into the ocean. Here is the abstract definition of that image:
 $$
@@ -219,7 +223,9 @@ for epoch in range(1, 201):
 
 As a final step, we can visualize the learned embeddings for the publications. We apply a TSNE algorithm to 48 dimensional vector and generate the 2d representation of the nodes. Additionally, we plot the edges between the nodes based on the attention weights which indicates the importance of neighborhood nodes while classifying the current node.  
 
-<div><img src="{{site_url}}/assets/gnn/attention_graph.png" /></div>
+<div style="text-align:center;">
+    <img src="{{site_url}}/assets/gnn/attention_graph.png" />
+</div>
 
 ## Conclusion
 
