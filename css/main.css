@@ -427,11 +427,11 @@ a:visited { color: #205caa; }
 
 }
 
-table {
+/* table {
   border:solid #000 !important;
   border-width:1px 0 0 1px !important;
-}
+} */
 th, td {
   border:solid #000 !important;
-  border-width:0 1px 1px 0 !important;
+  border-width:1px 1px 1px 1px !important;
 }
