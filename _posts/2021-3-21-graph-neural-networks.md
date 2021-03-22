@@ -170,7 +170,7 @@ $$
 h_{u}^{(k+1)} = \sigma\bigg(W_{\text{self}}^{(k)}h_{u}^{(k)} + W_{\text{neigh}}^{(k)}\sum_{\substack{v \in \mathcal{N} (u)}}h_v^{(k)} + b^{(k)}\bigg)
 $$
 
-Here $$\sigma$$ is an element-wise activation function (e.g. ReLU or Tanh) and $$W_{\text{self}}$$ and $$W_{\text{neigh}}$$ are learnable parameters. As you might notice, we used the $\sum$ operator as an aggregation function. If we want to map this equation to our abstract definition:
+Here $$\sigma$$ is an element-wise activation function (e.g. ReLU or Tanh) and $$W_{\text{self}}$$ and $$W_{\text{neigh}}$$ are learnable parameters. As you might notice, we used the $$\sum$$ operator as an aggregation function. If we want to map this equation to our abstract definition:
 
 $$
 m_{\mathcal{N}(u)} = \sum_{\substack{v \in \mathcal{N} (u)}}h_v
