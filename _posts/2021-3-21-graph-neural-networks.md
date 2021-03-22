@@ -7,8 +7,6 @@ comments: true
 mathjax: true
 ---
 
-# Graph Neural Networks
-
 > Graph Neural Networks (GNNs) is currently the primer approach in applying neural networks to relational data. In this post, we will see the basic formulation and different variations of the GNNs.
 
 * [A Brief Introduction to Graphs](#A-Brief-Introduction-to-Graphs)
@@ -213,7 +211,7 @@ $$
 
 The self-attention operation here is applied to the full graph. The authors proposed to inject the graph structure in to the mechanism by performing masked-attention. So, only the attention on edge $$e_{ij}$$ considered where $$j$$ is in the neighborhood of node $$i$$.
 
-Additionally, as in [Vaswani et al.,](https://arxiv.org/abs/1706.03762) we can use multi-head attention as well. By applying multiple attention heads independent from each other, we increase the representation power and stabilize the training.
+Additionally, as in [(Vaswani et al. 2017)](https://arxiv.org/abs/1706.03762) we can use multi-head attention as well. By applying multiple attention heads independent from each other, we increase the representation power and stabilize the training.
 
 <h2 id="Examples">Examples</h2>
 
