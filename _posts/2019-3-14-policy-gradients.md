@@ -181,13 +181,13 @@ We represent the value function with the neural network again and update its par
 
 <div style="display: flex;">
   <div style="flex: 33.33%; padding: 5px;">
-    <img src="https://thumbs.gfycat.com/ShyDelightfulButterfly-small.gif" alt="CartPole" style="width:100%">
+    <img src="{{site_url}}/assets/policy_gradients/cartpole.gif" alt="CartPole" style="width:100%">
   </div>
   <div style="flex: 33.33%; padding: 5px;">
-    <img src="https://thumbs.gfycat.com/MintyFalseIbis-small.gif" alt="LunarLander" style="width:100%">
+    <img src="{{site_url}}/assets/policy_gradients/lunar-lander-2.gif" alt="LunarLander" style="width:100%">
   </div>
   <div style="flex: 33.33%; padding: 5px;">
-    <img src="https://thumbs.gfycat.com/SimpleSecondhandBittern-small.gif" alt="InvertedPendulum" style="width:100%">
+    <img src="{{site_url}}/assets/policy_gradients/inverted-pendulum.gif" alt="InvertedPendulum" style="width:100%">
   </div>
 </div>
 
