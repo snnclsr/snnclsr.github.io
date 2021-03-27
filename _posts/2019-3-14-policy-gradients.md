@@ -15,15 +15,15 @@ This post assumes some prior knowledge about reinforcement learning. If you have
 
 Outline of this post:
 
-* Really Quick Introduction to Reinforcement Learning
-* Value Functions
-* Policy Gradients
-    * Policy Gradient Theorem
-* Reducing Variance
-    * Reward-to-go
-    * Baselines
+* [Really Quick Introduction to Reinforcement Learning](#rl-introduction)
+* [Value Functions](#value-functions)
+* [Policy Gradients](#policy-gradients)
+    * [Policy Gradient Theorem](#pg-theorem)
+* [Reducing Variance](#reducing-variance)
+    * [Reward-to-go](#reward-to-go)
+    * [Baselines](#baselines)
 
-### Really Quick Introduction to Reinforcement Learning
+<h3 id="rl-introduction">Really Quick Introduction to Reinforcement Learning</h3>
 
 Agent interacts with the environment on different time steps. At every time step $$t$$, agent receives the state/observation information and choose an action $$a$$ according to its policy $$\pi$$ and passes to new state $$s_{t+1}$$. After this transaction agent receives a reward signal that denotes how well did the agent perform. (i.e. good action or bad action)
 
@@ -33,14 +33,16 @@ Agents objective is to find actions that maximize the reward on every time step 
 
 To maximize the reward, there are two main approaches in reinforcement learning. First one is **value functions** and the second one is **policy gradients**. Our concern in this article will be on policy gradients. 
 
-### Value Functions
+<h3 id="value-functions">Value Functions</h3>
+
 Before going to deep, let's briefly introduce the value functions. I believe that even with a small introduction it will help us to understand policy gradients better. Value functions give us the quality of state or state-action pair. State-value function $$V^\pi (s)$$ gives us the expected value of being in state $$s$$ and then following the policy $$\pi$$ afterward. Action-value function $$Q^\pi (s)$$ gives us the expected value of being in state $$s$$, taking an action $$a$$ and then following the policy $$\pi$$ afterward. There is a close relation between these two functions: $$V^\pi (s) = \max_a Q^\pi (s)$$. 
 
 > After learning the value functions it's easy to derive policy by acting greedily in the environment.
     
 This sentence is kind of important to understand the main difference between the value functions and the policy gradients. In value functions, we first learn the value function and derive the policy later. But in policy gradient algorithms we directly learn/optimize the policy.
 
-### Policy Gradients
+<h3 id="policy-gradients">Policy Gradients</h3>
+
 Let's recall the definition of policy. The policy is a function that maps state $$s$$ to action $$a$$. It means that we will give the state/observation information to the policy and hopefully, it will return the best action that we should take. In other words, a policy is the brain of an agent.
 
 In the previous section, we mentioned that in policy gradient methods, we directly optimize the policy. We represent our policy with a parameterized function respect to $$\theta$$, $$\pi_{\theta} (a \mid s)$$, and our objective is to find the best parameters. Let's write the objective function in a formal way: 
@@ -61,7 +63,8 @@ $$\underbrace{\pi_\theta (s_1, a_1, ..., s_T, a_T)}_{\pi_\theta (\tau)} = p(s_1)
 
 Here $$p(s_1)$$ is the initial state distribution. This term is given by the model of the environment. $$\pi_\theta (a_t \mid s_t)$$ is our policy at time step $$t$$. We completely have control over that thing(i.e. it's neural network). $$p(s_{t+1} \mid s_t, a_t)$$ is transition probability. This term is also given by the model of the environment. Most of the time we don't know the model of the environment. As a result, we don't know the transaction probabilities. The reason that we cannot compute gradient is about transaction probabilities. But for a practical algorithm, we don't need to know it. In the next section, we will see why we don't need it.
 
-#### Policy Gradient Theorem
+<h4 id="pg-theorem">Policy Gradient Theorem</h4>
+
 Now hopefully we have a clear setup. We want to calculate the gradient of objective function respect to $$\theta$$ and we can not directly compute this gradient. So we have to apply some transformations.
 
 The first thing we are going to do is to put the gradient inside the integral.
@@ -119,10 +122,12 @@ And any other stochastic gradient algorithms like Adam, Momentum etc. can be app
 
 So this is the useful algorithm that we can use. But this version works poorly in practice due to high variance problem. Let's address this issue in the next section.
 
-### Reducing Variance
+<h3 id="reducing-variance">Reducing Variance</h3>
+
 In this section, we are going to show two tricks to reduce variance of policy gradient algorithms.
 
-#### Reward To Go
+<h4 id="reward-to-go">Reward To Go</h4>
+
 Let's rewrite the policy gradient algorithm.
 
 $$\nabla_\theta J(\theta) \approx \frac{1}{N} \sum_{i=1}^N \Bigg(\sum_{t=1}^T \nabla_\theta \log \pi_\theta (a_{i, t} | s_{i, t})\Bigg) \Bigg(\sum_{t=1}^T r(s_{i, t}, a_{i, t})\Bigg)$$
@@ -133,7 +138,8 @@ $$\nabla_\theta J(\theta) \approx \frac{1}{N} \sum_{i=1}^N \Bigg(\sum_{t=1}^T \n
 
 Note that the sum of rewards goes from $$t$$ to $$T$$. Basic intuition behind this idea is that, if we use less element to calculate variance we will have less variance.
 
-#### Baselines
+<h4 id="baselines">Baselines</h4>
+
 The intuition behind the policy gradient is that take the good stuff and make it more likely; take the bad stuff and make it less likely. At first, it seems intuitive but what if all rewards that we get is positive. The plain version of policy gradient will try to boost the probabilities of all actions that return positive reward. Instead of doing that we will introduce a new term called **baseline** and we will subtract it from the reward:
 
 $$\nabla_\theta J(\theta) \approx \frac{1}{N} \sum_{i=1}^N \nabla_\theta \log \pi_\theta (\tau) [r(\tau) - b]$$
